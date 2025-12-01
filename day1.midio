@@ -1,0 +1,194 @@
+
+import("std", Std_pvchbs)
+import("http", Http_cngvqt)
+
+module ``Day 1`` {
+    func ``Parse Line`` {
+        in(x: -410.0817260742187, y: -389.5518798828125, name: "parse") trigger parse
+        in(x: -480.7616080586883, y: -220.26852416992188, name: "input") property(String) input
+
+        out(x: 334.6319580078125, y: -415.0355529785156, name: "done")  trigger parse_0AfS5r
+        out(x: 739.3412436788055, y: -264.2685241699219, name: "amount")  property(Number) result
+
+        instance(x: -74.8, y: -45.7, stableId: "c11djza9erc7snpnvwm8ctpe") substring_2bb63d root.Std_pvchbs.String.Substring {}
+        instance(x: 33.0, y: -141.8, stableId: "cr02yrtmivnfj8olbulzlkvr") parse_34fbaf root.Std_pvchbs.Number.Parse {}
+        instance(x: 305.7, y: -264.3, stableId: "rc5zgrb8rgnipqksqnussfs5") mul_b3ab96 root.Std_pvchbs.Math.Mul {}
+        let expr_0ab6ff = #{item.length#}
+        let expr_ef64a4 = #{item[0] == "L" ? -1 : 1#}
+        substring_2bb63d.substring -> parse_34fbaf.string
+        1 -> substring_2bb63d.start
+        input -> substring_2bb63d.input
+        expr_0ab6ff -> substring_2bb63d.end
+        input -> expr_0ab6ff.item
+        expr_ef64a4 -> mul_b3ab96.first
+        input -> expr_ef64a4.item
+        parse_34fbaf.result -> mul_b3ab96.second
+        mul_b3ab96.result -> result
+        parse -> parse_0AfS5r
+    }
+
+    func ``Prepare Input`` {
+        in(x: -377.70188428950974, y: -358.33498028819275, name: "test") trigger ``enter first``
+        in(x: -381.70188428950974, y: -212.84603980743069, name: "test input") property(String) first
+        in(x: -374.9621380007813, y: -118.53362804315532, name: "actual") trigger ``enter second``
+        in(x: -378.9621380007813, y: 26.95531243760678, name: "puzzle input") property(String) second
+
+        out(x: 358.93046934155734, y: -317.253455327359, name: "done")  trigger ``entered first``
+        out(x: 725.7500960461449, y: -72.15456947401907, name: "result")  property(List) result
+
+        instance(x: 299.8, y: -61.6, stableId: "q1396iitpf4wveitr87zgldf") split_14719b root.Std_pvchbs.String.Split {}
+        instance(x: 317.8, y: 64.3, stableId: "id6k6adbshnesle4sbu52tdw") removenullvalues_59f275 root.Std_pvchbs.List.RemoveNullValues {}
+        instance(x: 340.8, y: -149.0, stableId: "dx4z4sv5j02909zwgqujgtdo") trim_294a89 root.Std_pvchbs.String.Trim {}
+        instance(x: -57.7, y: -273.0, stableId: "uvdq68z4rjh7nxifuqt3c19w") switch_2c99cc root.Std_pvchbs.Std.Switch {}
+        let expr_04e785 = #{"\n"#}
+        split_14719b.strings -> removenullvalues_59f275.input
+        trim_294a89.trimmed -> split_14719b.string
+        expr_04e785 -> split_14719b.splitOn
+        removenullvalues_59f275.result -> result
+        ``enter first`` -> switch_2c99cc.enterFirst
+        ``enter second`` -> switch_2c99cc.enterSecond
+        first -> switch_2c99cc.first
+        second -> switch_2c99cc.second
+        switch_2c99cc.enteredFirst -> ``entered first``
+        switch_2c99cc.enteredSecond -> ``entered first``
+        switch_2c99cc.value -> trim_294a89.input
+    }
+
+    module ``Part 1`` {
+        instance(x: 1590.2, y: 452.9, stableId: "crptbny918glx391ke0yhahr") foreach_df93c3 root.Std_pvchbs.Std.ForEach {}
+        instance(x: 2081.6, y: 444.6, stableId: "s12sjttr00jvgipfh3naop5v") log_6d6a6c root.Std_pvchbs.Std.Log {}
+        instance(x: 327.5, y: 320.0, stableId: "tsu3qtrncdwdmcw56il7oqjv") entrypoint_f3614d root.Std_pvchbs.Std.Entrypoint {
+            entrypointName: "Day 1 Part 1 Test"
+            runOnLaunch: false}
+        setter(x: 2172.2, y: 658.1, stableId: "h54lty66fms142bv35y4cal0", name: "setter_671185") setter_e9b860 = mut state
+        setter(x: 2592.0, y: 658.1, stableId: "ksuum40yyvu8linz8r5hcpru", name: "setter_0de4b4") setter_7865ec = mut result
+        instance(x: 67.4, y: 625.5, stableId: "p10e1rj0yg9icj2ri732dmzv") entrypoint_f98c2e root.Std_pvchbs.Std.Entrypoint {
+            entrypointName: "Day 1 Part 1"
+            runOnLaunch: false}
+        data_instance(x: 487.4, y: 474.8, width: 163.0, height: 128.0, stableId: "lusitr1hk5bwt58v1darh5yq") data_c96f1c  = "L68\nL30\nR48\nL5\nR60\nL55\nL1\nL99\nR14\nL82"
+        setter(x: 1219.2, y: 441.9, stableId: "aygtohuufl9bwpy8pfcoli7u", name: "setter_451405") setter_d5c88d = mut state
+        setter(x: 1223.2, y: 550.4, stableId: "pd8c8icgcemtff9jeij4yt8o", name: "setter_f42171") setter_94a086 = mut result
+        instance(x: 489.8, y: 625.8, stableId: "fqbezeqinkxp43dtsg96r1xb") ``fetch input_25ab60`` root.Utils.``Fetch Input`` {}
+        instance(x: 842.5, y: 472.1, stableId: "vq0upwfmg8yrzur6ieitlf3h") ``prepare input_8ff8bc`` root.``Day 1``.``Prepare Input`` {
+            result => input}
+        instance(x: 1930.4, y: 658.1, stableId: "enf76o6refwzzzxrv23ucphz") ``parse line_5f21cc`` root.``Day 1``.``Parse Line`` {}
+        let expr_37e430 = #{"Result is: ${@result}"#}
+        let expr_86e4d7 = #{@state == 0 ? (@result + 1) : @result#}
+        let expr_b66565 = #{(@state + value + 100) % 100#}
+        let expr_d82663 = #{@input#}
+        comment(x: 202.3, y: 444.7, stableId: "kxf7in6bh5ti6wt7v2rqbfrc") "# Test data"
+        foreach_df93c3.done -> log_6d6a6c.log
+        setter_e9b860.continue -> setter_7865ec.execute
+        setter_7865ec.continue -> foreach_df93c3.continue
+        expr_37e430 -> log_6d6a6c.input
+        expr_86e4d7 -> setter_7865ec.new_value
+        expr_b66565 -> setter_e9b860.new_value
+        data_c96f1c -> ``prepare input_8ff8bc``.first
+        setter_d5c88d.continue -> setter_94a086.execute
+        ``fetch input_25ab60``.done -> ``prepare input_8ff8bc``.``enter second``
+        ``fetch input_25ab60``.response -> ``prepare input_8ff8bc``.second
+        ``prepare input_8ff8bc``.``entered first`` -> setter_d5c88d.execute
+        50 -> setter_d5c88d.new_value
+        0 -> setter_94a086.new_value
+        1 -> ``fetch input_25ab60``.day
+        entrypoint_f3614d.started -> ``prepare input_8ff8bc``.``enter first``
+        entrypoint_f98c2e.started -> ``fetch input_25ab60``.fetch
+        expr_d82663 -> foreach_df93c3.items
+        setter_94a086.continue -> foreach_df93c3.start
+        foreach_df93c3.gotItem -> ``parse line_5f21cc``.parse
+        foreach_df93c3.item -> ``parse line_5f21cc``.input
+        ``parse line_5f21cc``.result -> expr_b66565.value
+        ``parse line_5f21cc``.parse_0AfS5r -> setter_e9b860.execute
+    }
+
+    module ``Part 2`` {
+        data_instance(x: 525.7, y: 442.9, width: 163.0, height: 128.0, stableId: "d1064gyyg1b2wfow0usgkm9u") data_b0354a  = "L68\nL30\nR48\nL5\nR60\nL55\nL1\nL99\nR14\nL82"
+        instance(x: 1602.8, y: 505.8, stableId: "inn02cy5783f8qiyn4rwtdvt") foreach_2ca392 root.Std_pvchbs.Std.ForEach {}
+        instance(x: 1992.6, y: 433.4, stableId: "ql38kmyl2d0x2q32y8dhxmgb", visibilityOverrides: { inputs: [["level", true]]}) log_cab11d root.Std_pvchbs.Std.Log {}
+        instance(x: 359.5, y: 283.8, stableId: "wtr8a0syp61bqb0p28iqbeof") entrypoint_267138 root.Std_pvchbs.Std.Entrypoint {
+            entrypointName: "Day 1 Part 2 Test"
+            runOnLaunch: false}
+        setter(x: 1257.5, y: 410.0, stableId: "chkqatsf40et1a3jpnpnve35", name: "setter_451405") setter_df7b6a = mut state
+        setter(x: 3397.5, y: 777.2, stableId: "pq3wqcqlpdknr7wbqiwlj5ze", name: "setter_671185") setter_dc0ae0 = mut state
+        setter(x: 1261.5, y: 518.5, stableId: "q4ujqbumqazzuddy2ts3gthh", name: "setter_f42171") setter_d43b39 = mut result
+        setter(x: 2926.6, y: 777.2, stableId: "a36wp7gpwdb50ubu9lsmfcr7", name: "setter_0de4b4") setter_1eb300 = mut result
+        instance(x: 115.4, y: 593.9, stableId: "wziucm0tvq906gokax498eod") entrypoint_d5f557 root.Std_pvchbs.Std.Entrypoint {
+            entrypointName: "Day 1 Part 2"
+            runOnLaunch: false}
+        instance(x: 2321.8, y: 813.3, stableId: "iwnq6ue5iav478tswcydvkfi") cache_107a64 root.Std_pvchbs.Std.Cache {}
+        instance(x: 2321.8, y: 963.7, stableId: "r20910djvs66xkx62y38bdnf") cache_fa76fb root.Std_pvchbs.Std.Cache {}
+        instance(x: 2014.1, y: 813.3, stableId: "opr7rzu3s64ky4b0itgpy03d") parse_c7d2ce root.``Day 1``.``Parse Line`` {
+            result => rotation}
+        instance(x: 528.1, y: 593.9, stableId: "ndfegppcyyq0g7oktihi97nw") ``fetch input_3dc888`` root.Utils.``Fetch Input`` {}
+        instance(x: 880.8, y: 440.1, stableId: "tzy4p2ww7vlgvs00kbmxo232") ``prepare input_7071b4`` root.``Day 1``.``Prepare Input`` {
+            result => input}
+        let expr_62ffcd = #{"Result is: ${@result}"#}
+        let expr_e57165 = #{@result + fullRots + past50#}
+        let expr_5f875c = #{math.floor(x: math.abs(x: @rotation) / 100.0)#}
+        let expr_12fc52 = #{((@state + (@rotation % 100) >= 100 || @state + (@rotation % 100) <= 0) && @state != 0) ? 1 : 0#}
+        let expr_89d067 = #{((@state + @rotation % 100) + 100) % 100#}
+        let expr_629732 = #{@input#}
+        comment(x: 430.6, y: 382.7, stableId: "mbm4qn8ude8q6cpi5tzgjk1p") "# Test data"
+        comment(x: 2323.9, y: 753.6, stableId: "w14kpjhzd2a6xwjjhh5vw8nv") "number of full rotations"
+        comment(x: 2325.9, y: 1114.6, stableId: "xl6zcbbxmqmcguilzskf8tm4") "did we pass 0\n"
+        comment(x: 2926.6, y: 721.7, stableId: "ls0j9g4hc95tm2qcyjh4qxqy") "Update running count"
+        comment(x: 3397.7, y: 721.3, stableId: "v7rfpoea0b1ildtfsuh9upo6") "Update current state (position of dial)"
+        comment(x: 1996.3, y: 374.7, stableId: "f115wowzllnob5avyto65ldn") "# Result"
+        foreach_2ca392.done -> log_cab11d.log
+        setter_df7b6a.continue -> setter_d43b39.execute
+        expr_62ffcd -> log_cab11d.input
+        0 -> setter_d43b39.new_value
+        cache_107a64.done -> cache_fa76fb.cache
+        cache_fa76fb.done -> setter_1eb300.execute
+        expr_e57165 -> setter_1eb300.new_value
+        cache_107a64.value -> expr_e57165.fullRots
+        cache_fa76fb.value -> expr_e57165.past50
+        expr_5f875c -> cache_107a64.input
+        50 -> setter_df7b6a.new_value
+        foreach_2ca392.item -> parse_c7d2ce.input
+        foreach_2ca392.gotItem -> parse_c7d2ce.parse
+        parse_c7d2ce.parse_0AfS5r -> cache_107a64.cache
+        expr_12fc52 -> cache_fa76fb.input
+        expr_89d067 -> setter_dc0ae0.new_value
+        setter_1eb300.continue -> setter_dc0ae0.execute
+        setter_dc0ae0.continue -> foreach_2ca392.continue
+        entrypoint_d5f557.started -> ``fetch input_3dc888``.fetch
+        1 -> ``fetch input_3dc888``.day
+        setter_d43b39.continue -> foreach_2ca392.start
+        expr_629732 -> foreach_2ca392.items
+        "Info" -> log_cab11d.level
+        entrypoint_267138.started -> ``prepare input_7071b4``.``enter first``
+        data_b0354a -> ``prepare input_7071b4``.first
+        ``fetch input_3dc888``.done -> ``prepare input_7071b4``.``enter second``
+        ``fetch input_3dc888``.response -> ``prepare input_7071b4``.second
+        ``prepare input_7071b4``.``entered first`` -> setter_df7b6a.execute
+    }
+
+}
+
+module Utils {
+    func ``Fetch Input`` {
+        in(x: -28.30170593261721, y: -105.68856345520317, name: "fetch") trigger fetch
+        in(x: -42.30170593261721, y: 48.92320075788783, name: "day") property(Number) day
+
+        out(x: 783.5251168575817, y: -37.60000000000002, name: "done")  trigger done
+        out(x: 786.9022600490574, y: 77.83668939580872, name: "input")  property(String) response
+
+        instance(x: 264.2, y: -37.6, stableId: "eyxiqyrlnmgz9veknrqv03ki") fetch_50d7ac root.Http_cngvqt.Http.Fetch {}
+        data_instance(x: -344.3, y: 151.6, width: 451.0, height: 154.0, stableId: "hqy6hv5pcasz37k7bmvaovvy") data_d772f3  = {
+                Cookie: "session=<your session cookie>"
+            }
+        let expr_c9bad2 = #{"https://adventofcode.com/2025/day/${day}/input"#}
+        data_d772f3 -> fetch_50d7ac.headers
+        "GET" -> fetch_50d7ac.method
+        "text" -> fetch_50d7ac.responseType
+        fetch -> fetch_50d7ac.fetch
+        fetch_50d7ac.done -> done
+        expr_c9bad2 -> fetch_50d7ac.url
+        day -> expr_c9bad2.day
+        fetch_50d7ac.response -> response
+    }
+
+}
+
+
