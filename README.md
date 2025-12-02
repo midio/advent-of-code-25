@@ -1,5 +1,14 @@
 # Advent of code 2025 solutions in Midio
 
+## How to run
+
+1. Make a new project (editor.midio.com)
+2. Go to editor.midio.com/project/<your-project>/code
+3. Paste the code into the .midio file and hit save
+4. Return to editor.midio.com/project/<your-project>
+
+BTW: Midio is currently in beta. If you want to try it out, the easiest way would be to request access on our [discord](https://discord.com/invite/hWkSQFUUeC).
+
 ## Day 2
 
 ### Part 1
