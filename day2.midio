@@ -1,0 +1,283 @@
+import("std", Std_pvchbs)
+import("http", Http_cngvqt)
+
+module ``Day 2`` {
+    module ``Part 1 (brute force)`` {
+        func ``Is ID Invalid (part 1)`` {
+            in(x: -592.4693450927734, y: -10.022399902343764, name: "input") property(String) input
+
+            out(x: 611.3004150390625, y: 7.257226562500001, name: "result")  property(Bool) result
+
+            instance(x: -55.6, y: -50.3, stableId: "y5n3ufog6zgyffjhg5noxv1k") substring_9e7913 root.Std_pvchbs.String.Substring {}
+            instance(x: -55.6, y: 97.4, stableId: "mwhw88yhdsqz3ay6eu0gxhk7") substring_89dea5 root.Std_pvchbs.String.Substring {}
+            instance(x: -339.6, y: 217.3, stableId: "em4xph9cdwjg6fb42k7w7fbl") length_6021ee root.Std_pvchbs.String.Length {}
+            instance(x: 352.9, y: 7.3, stableId: "byz8uu7s9hnmm4c48f77f3ik") equal_b1a9c3 root.Std_pvchbs.Logic.Equal {}
+            let expr_970046 = #{input.length / 2#}
+            let expr_562c62 = #{input.length / 2#}
+            comment(x: -55.6, y: -140.7, stableId: "sjsjmebjcoc5xqboo7lkxr1j") "# Check for invalid ID (part 1)"
+            length_6021ee.length -> substring_89dea5.end
+            expr_970046 -> substring_9e7913.end
+            expr_562c62 -> substring_89dea5.start
+            0 -> substring_9e7913.start
+            input -> substring_9e7913.input
+            input -> expr_970046.input
+            input -> substring_89dea5.input
+            input -> expr_562c62.input
+            input -> length_6021ee.input
+            substring_9e7913.substring -> equal_b1a9c3.left
+            substring_89dea5.substring -> equal_b1a9c3.right
+            equal_b1a9c3.result -> result
+        }
+
+        func ``Get Range`` {
+            in(x: -770.85302734375, y: -436.34381103515625, name: "make") trigger make
+            in(x: -878.0282932942707, y: -222.3450738728842, name: "range string") property(String) string
+
+            out(x: 159.060302734375, y: -496.97943115234375, name: "done")  trigger make_bWA77G
+            out(x: 551.8543701171875, y: -397.3508911132813, name: "range start")  property(Number) result_WFyFuX
+            out(x: 814.8123439127605, y: -130.74006288655605, name: "num iterations")  property(Number) result
+
+            instance(x: -590.3, y: -222.3, stableId: "ufbcj1vity5lib2ygbxokw9p") split_d40c87 root.Std_pvchbs.String.Split {}
+            instance(x: -88.9, y: -260.9, stableId: "ag0cx37fdvis4y6o3z6rb97n") parse_d690e7 root.Std_pvchbs.Number.Parse {}
+            waypoint(x: -267.8, y: -233.9, stableId: "q599xij1wctm6xufcj9j2ur9") wp_ec8b36 = 0
+            instance(x: -88.9, y: -184.7, stableId: "qbz4rruw57aaq7atz6srjw7c") parse_3e5b60 root.Std_pvchbs.Number.Parse {}
+            waypoint(x: -269.8, y: -157.7, stableId: "mga59pxxxg363q9emlvi3l1e") wp_98f84a = 1
+            instance(x: 279.7, y: -161.8, stableId: "spfbfixue6w8j5b6i5xbl62b") sub_9182b3 root.Std_pvchbs.Math.Sub {}
+            instance(x: 539.9, y: -136.7, stableId: "kihjvxiiaifsiz39sttkkqly") add_b8ebde root.Std_pvchbs.Math.Add {}
+            let expr_552864 = #{"-"#}
+            split_d40c87.strings -> wp_ec8b36
+            split_d40c87.strings -> wp_98f84a
+            wp_ec8b36 -> parse_d690e7.string
+            wp_98f84a -> parse_3e5b60.string
+            expr_552864 -> split_d40c87.splitOn
+            string -> split_d40c87.string
+            parse_d690e7.result -> result_WFyFuX
+            make -> make_bWA77G
+            parse_d690e7.result -> sub_9182b3.second
+            parse_3e5b60.result -> sub_9182b3.first
+            sub_9182b3.result -> add_b8ebde.first
+            1 -> add_b8ebde.second
+            add_b8ebde.result -> result
+        }
+
+        data_instance(x: -79.7, y: 343.3, stableId: "pw70zoznparm986fg62kvml2") data_fe9174  = "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,1698522-1698528,446443-446449,38593856-38593862,565653-565659,824824821-824824827,2121212118-2121212124"
+        instance(x: 1126.7, y: 257.3, stableId: "lbi2ix4m064xaeu8c4qw632f") foreach_9fa7fd root.Std_pvchbs.Std.ForEach {}
+        instance(x: 687.4, y: 325.4, stableId: "au3vaoaoerl21erxfe6mty90") cache_896bb6 root.Std_pvchbs.Std.Cache {}
+        instance(x: 1409.3, y: 257.3, stableId: "gawz11qgavw6d1rmlr0qospu") log_577cb0 root.Std_pvchbs.Std.Log {}
+        instance(x: 1603.9, y: 874.4, stableId: "s4peafhe1y3f5yhzsrifk5ug") cache_2ee7c0 root.Std_pvchbs.Std.Cache {
+            value => value}
+        instance(x: -66.7, y: 225.4, stableId: "bt9aa5cs42eabzv9srycsmbh") entrypoint_2d622e root.Std_pvchbs.Std.Entrypoint {
+            entrypointName: "Day 2 Part 1 Test"
+            runOnLaunch: false}
+        instance(x: 1797.6, y: 1008.2, stableId: "y11t4qz8czyy7xw49h3mqzbj") ``is range invalid_35f1d4`` root.``Day 2``.``Part 1 (brute force)``.``Is ID Invalid (part 1)`` {}
+        setter(x: 773.1, y: 203.4, stableId: "lf1qow4seejp6tru0fg6asph", name: "setter_02907a") setter_02907a = mut result
+        instance(x: 2013.2, y: 874.4, stableId: "krqdhli3egeodvaotffgqyi3") if_911c06 root.Std_pvchbs.Std.If {}
+        setter(x: 2286.3, y: 795.3, stableId: "rdv7sjnuftahsy6da87l9n1z", name: "setter_c1de33") setter_c1de33 = mut result
+        instance(x: 1430.2, y: 533.2, stableId: "hldupw7wsw3vytn13e56kl7m") ``for id in range_fa0285`` root.``Day 2``.``Part 1 (brute force)``.``Get Range`` {
+            result_WFyFuX => rangeStart}
+        instance(x: 2332.6, y: 533.2, stableId: "axqd1tr4303a8aoomdvei061") for_680a7e root.Std_pvchbs.Std.For {
+            index => index}
+        instance(x: 1519.3, y: 1008.2, stableId: "jm5nsx4b2a60a1jpk7509zln") tostring_b416f6 root.Std_pvchbs.Std.ToString {}
+        data_instance(x: -79.7, y: 643.2, stableId: "o82j1bibt06xmmuyaei0rke2") data_14c57b  = "9100-11052,895949-1034027,4408053-4520964,530773-628469,4677-6133,2204535-2244247,55-75,77-96,6855-8537,55102372-55256189,282-399,228723-269241,5874512-6044824,288158-371813,719-924,1-13,496-645,8989806846-8989985017,39376-48796,1581-1964,699387-735189,85832568-85919290,6758902779-6759025318,198-254,1357490-1400527,93895907-94024162,21-34,81399-109054,110780-153182,1452135-1601808,422024-470134,374195-402045,58702-79922,1002-1437,742477-817193,879818128-879948512,407-480,168586-222531,116-152,35-54"
+        instance(x: 375.7, y: 264.8, stableId: "tvr7kvmxcn053w7v3006p24a") cache_e91a83 root.Std_pvchbs.Std.Cache {}
+        instance(x: 375.7, y: 498.0, stableId: "m9rtfwcr70t1sveqw1kj0tps") cache_1db46e root.Std_pvchbs.Std.Cache {}
+        instance(x: -30.7, y: 525.3, stableId: "igc74jc9ogjsmsma39lc7vmz") entrypoint_b2a64d root.Std_pvchbs.Std.Entrypoint {
+            entrypointName: "Day 2 Part 1"
+            runOnLaunch: false}
+        instance(x: 636.4, y: 452.0, stableId: "rew9wnrh2m4gl3g9zgc1ydmt") split_c09dfd root.Std_pvchbs.String.Split {}
+        instance(x: 636.4, y: 577.3, stableId: "a5ls0a13kz8f2acg4xbcrarl") firstnonnull_f319da root.Std_pvchbs.List.FirstNonNull {}
+        instance(x: 1803.9, y: 487.4, stableId: "izrr6j24zshk9vuioxkcw9s3") log_c3cdc5 root.Std_pvchbs.Std.Log {}
+        let expr_a62a48 = #{","#}
+        let expr_3922c4 = #{"Result is: ${@result}"#}
+        let expr_d714c0 = #{"IDs in range: ${iter}"#}
+        let expr_d0d9cd = #{@value#}
+        let expr_9064d9 = #{@result + @value#}
+        let expr_cb85c9 = #{@index + @rangeStart#}
+        portal(entrance: { stableId: "crlf2zpjzynutwuw42ifgbvv", x: 2778.0, y: 928.4}, exit: { stableId: "w11pwwnkclu3bq3h4230vvp0", x: 2229.1, y: 669.9}) portal_ef8cbf {
+            entrance_72e32b => exit_aace8c
+        }
+        comment(x: 1411.2, y: 200.6, stableId: "a9olj85omxiitr1h5e2097ks") "# Print the result"
+        comment(x: 2567.3, y: 967.8, stableId: "ctwwjy2co81jtbu3edcf5y6t") "Continue loop"
+        comment(x: 1090.9, y: 202.6, stableId: "b62dkfsmx01oimopowdpuy17") "# Main loop"
+        comment(x: 2362.8, y: 464.6, stableId: "s9m7q5o8i87nqo3893vhwpxb") "# For each ID in range"
+        cache_896bb6.value -> foreach_9fa7fd.items
+        foreach_9fa7fd.done -> log_577cb0.log
+        0 -> setter_02907a.new_value
+        cache_896bb6.done -> setter_02907a.execute
+        setter_02907a.continue -> foreach_9fa7fd.start
+        ``is range invalid_35f1d4``.result -> if_911c06.predicate
+        cache_2ee7c0.done -> if_911c06.execute
+        if_911c06.then -> setter_c1de33.execute
+        foreach_9fa7fd.item -> ``for id in range_fa0285``.string
+        foreach_9fa7fd.gotItem -> ``for id in range_fa0285``.make
+        ``for id in range_fa0285``.result -> for_680a7e.iterations
+        for_680a7e.done -> foreach_9fa7fd.continue
+        for_680a7e.onCount -> cache_2ee7c0.cache
+        tostring_b416f6.output -> ``is range invalid_35f1d4``.input
+        entrypoint_2d622e.started -> cache_e91a83.cache
+        cache_e91a83.done -> cache_896bb6.cache
+        expr_a62a48 -> split_c09dfd.splitOn
+        split_c09dfd.strings -> cache_896bb6.input
+        firstnonnull_f319da.value -> split_c09dfd.string
+        cache_e91a83.value -> firstnonnull_f319da.items
+        data_fe9174 -> cache_e91a83.input
+        entrypoint_b2a64d.started -> cache_1db46e.cache
+        cache_1db46e.done -> cache_896bb6.cache
+        data_14c57b -> cache_1db46e.input
+        cache_1db46e.value -> firstnonnull_f319da.items
+        ``for id in range_fa0285``.make_bWA77G -> log_c3cdc5.log
+        log_c3cdc5.logged -> for_680a7e.start
+        expr_3922c4 -> log_577cb0.input
+        expr_d714c0 -> log_c3cdc5.input
+        ``for id in range_fa0285``.result -> expr_d714c0.iter
+        expr_d0d9cd -> tostring_b416f6.input
+        expr_9064d9 -> setter_c1de33.new_value
+        portal_ef8cbf.exit_aace8c -> for_680a7e.continue
+        setter_c1de33.continue -> portal_ef8cbf.entrance_72e32b
+        if_911c06.else -> portal_ef8cbf.entrance_72e32b
+        expr_cb85c9 -> cache_2ee7c0.input
+    }
+
+    module ``Part 2 (brute force)`` {
+        func ``Is ID Invalid (part 2)`` {
+            in(x: -977.5216983919812, y: -70.63090451772808, name: "is invalid") trigger match
+            in(x: -1008.6309455410436, y: 83.63516407318687, name: "input") property(String) input => input
+
+            out(x: 1759.672417519546, y: -115.4482417918519, name: "done")  trigger ``found match``
+            out(x: 1759.672417519546, y: -3.04344541887707, name: "result")  property(Bool) result
+
+            instance(x: -142.7, y: -71.9, stableId: "d1e80x1fdxnsvdyikl0v24p6") for_7e485d root.Std_pvchbs.Std.For {}
+            instance(x: -752.8, y: -71.9, stableId: "rfm7slnyiqlv3vdocurl03e9") cache_04c65b root.Std_pvchbs.Std.Cache {}
+            instance(x: -57.9, y: 139.4, stableId: "bi6js94tkwu43fteqm41ncpu") chunks_eb4173 root.Std_pvchbs.List.Chunks {}
+            instance(x: -473.3, y: 114.5, stableId: "fjh4d5z7f9r2lg9bowq97nyi") cache_276935 root.Std_pvchbs.Std.Cache {
+                value => characters}
+            instance(x: -735.7, y: 140.5, stableId: "lp1eg6rkx0blnd45vj06s757") characters_d0ca60 root.Std_pvchbs.String.Characters {}
+            instance(x: 580.1, y: 199.4, stableId: "z14l46heockkce9geucgp7aj") foreach_09e6ed root.Std_pvchbs.Std.ForEach {}
+            instance(x: 250.0, y: 89.8, stableId: "z5imql4ec37xhempnyr8eh26") cache_8f6797 root.Std_pvchbs.Std.Cache {
+                value => chunks}
+            setter(x: 523.1, y: 86.4, stableId: "guf11d5vrkewzhyulfxx74p4", name: "setter_f76aec") setter_f76aec = mut chunksMatches
+            setter(x: 923.4, y: 358.3, stableId: "yyx1achl7pqlwg2bzi6ggm2z", name: "setter_e9cb99") setter_e9cb99 = mut chunksMatches
+            instance(x: 803.1, y: 86.4, stableId: "su33bi2wds6p39fjpjn8k9dv") if_867371 root.Std_pvchbs.Std.If {}
+            instance(x: 1402.2, y: -121.9, stableId: "c12aspyj9egjcuyjn77palpl") switch_206b94 root.Std_pvchbs.Std.Switch {}
+            instance(x: 1198.7, y: 86.4, stableId: "eqrwr4bf1nyvu7ggjurxbpk1") log_4af34e root.Std_pvchbs.Std.Log {}
+            let expr_1b1a76 = #{i + 1#}
+            let expr_58a1a5 = #{@characters#}
+            let expr_1e894d = #{@chunksMatches && item == @chunks[0]#}
+            let expr_48b649 = #{@chunksMatches#}
+            let expr_c01c27 = #{"${@input} - chunks ${@chunks[0]}"#}
+            let expr_daccac = #{math.floor(x: input.length / 2)#}
+            comment(x: 58.4, y: -246.7, stableId: "towps6ngmrtbedudf74c1ued") "# Check for invalid ID (part 2)"
+            cache_04c65b.value -> for_7e485d.iterations
+            expr_1b1a76 -> chunks_eb4173.chunkSize
+            for_7e485d.index -> expr_1b1a76.i
+            input -> characters_d0ca60.input
+            characters_d0ca60.characters -> cache_276935.input
+            cache_04c65b.done -> cache_276935.cache
+            cache_276935.done -> for_7e485d.start
+            expr_58a1a5 -> chunks_eb4173.list
+            chunks_eb4173.chunks -> cache_8f6797.input
+            for_7e485d.onCount -> cache_8f6797.cache
+            cache_8f6797.value -> foreach_09e6ed.items
+            cache_8f6797.done -> setter_f76aec.execute
+            setter_f76aec.continue -> foreach_09e6ed.start
+            foreach_09e6ed.gotItem -> setter_e9cb99.execute
+            expr_1e894d -> setter_e9cb99.new_value
+            foreach_09e6ed.item -> expr_1e894d.item
+            true -> setter_f76aec.new_value
+            setter_e9cb99.continue -> foreach_09e6ed.continue
+            expr_48b649 -> if_867371.predicate
+            foreach_09e6ed.done -> if_867371.execute
+            true -> switch_206b94.first
+            false -> switch_206b94.second
+            switch_206b94.enteredFirst -> ``found match``
+            switch_206b94.enteredSecond -> ``found match``
+            switch_206b94.value -> result
+            if_867371.else -> for_7e485d.continue
+            for_7e485d.done -> switch_206b94.enterSecond
+            if_867371.then -> log_4af34e.log
+            log_4af34e.logged -> switch_206b94.enterFirst
+            expr_c01c27 -> log_4af34e.input
+            match -> cache_04c65b.cache
+            expr_daccac -> cache_04c65b.input
+            input -> expr_daccac.input
+        }
+
+        data_instance(x: -747.9, y: 357.4, stableId: "vm8s4twqajdfnvs1dfxpyd9i") data_c1b118  = "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,1698522-1698528,446443-446449,38593856-38593862,565653-565659,824824821-824824827,2121212118-2121212124"
+        instance(x: 587.4, y: 214.7, stableId: "mrguzb0wxre1n4ekcnjyw6my") foreach_cc8d0e root.Std_pvchbs.Std.ForEach {}
+        instance(x: 227.9, y: 329.0, stableId: "f501v16imvrwzfcz2ofec5yv") cache_9bf0a3 root.Std_pvchbs.Std.Cache {}
+        instance(x: 912.5, y: 214.7, stableId: "mmw3kwo2gcevo33oy5nqo2az") log_c78b7f root.Std_pvchbs.Std.Log {}
+        instance(x: 737.2, y: 736.7, stableId: "dxmpixiyr5im0xsd1hn1znhu") cache_2c92e4 root.Std_pvchbs.Std.Cache {
+            value => value}
+        instance(x: -733.9, y: 239.5, stableId: "g12gsex31ev8kkooddempjtx") entrypoint_a09128 root.Std_pvchbs.Std.Entrypoint {
+            entrypointName: "Day 2 Part 2 Test"
+            runOnLaunch: false}
+        setter(x: 282.1, y: 214.7, stableId: "dmiamut2w2qdmc7fop2n4d8f", name: "setter_02907a") setter_dc626b = mut result
+        instance(x: 1630.3, y: 736.7, stableId: "eko1cmy0mdwk533qvy363aw8") if_432b63 root.Std_pvchbs.Std.If {}
+        setter(x: 1913.4, y: 689.0, stableId: "dtslbrq737zh4tw13z1yzwc4", name: "setter_c1de33") setter_3aaa27 = mut result
+        instance(x: 893.3, y: 497.0, stableId: "knpgr3z1pnalam4gblgtqsj4") ``for id in range_65662d`` root.``Day 2``.``Part 1 (brute force)``.``Get Range`` {
+            result_WFyFuX => rangeStart}
+        instance(x: 1824.4, y: 495.0, stableId: "nc12x7xjpamm1g2rl3r5ikrj") for_a2ab19 root.Std_pvchbs.Std.For {
+            index => index}
+        instance(x: 1142.8, y: 800.9, stableId: "j8v7s5odx57hxaq0fdiyaqnl") tostring_3d95a1 root.Std_pvchbs.Std.ToString {}
+        data_instance(x: -747.9, y: 657.3, stableId: "r1497ihdmcrno5fe6dfxtduc") data_8e6448  = "9100-11052,895949-1034027,4408053-4520964,530773-628469,4677-6133,2204535-2244247,55-75,77-96,6855-8537,55102372-55256189,282-399,228723-269241,5874512-6044824,288158-371813,719-924,1-13,496-645,8989806846-8989985017,39376-48796,1581-1964,699387-735189,85832568-85919290,6758902779-6759025318,198-254,1357490-1400527,93895907-94024162,21-34,81399-109054,110780-153182,1452135-1601808,422024-470134,374195-402045,58702-79922,1002-1437,742477-817193,879818128-879948512,407-480,168586-222531,116-152,35-54"
+        instance(x: -254.9, y: 346.9, stableId: "fb8vkty7aqv5ri8r2e6gsrtx") cache_a84b48 root.Std_pvchbs.Std.Cache {}
+        instance(x: -254.9, y: 465.0, stableId: "ln19j4wbtrxjm2ig63l47api") cache_67e33c root.Std_pvchbs.Std.Cache {}
+        instance(x: -697.9, y: 539.4, stableId: "ggb6132yxkw2an90rmg58w2s") entrypoint_128822 root.Std_pvchbs.Std.Entrypoint {
+            entrypointName: "Day 2 Part 2"
+            runOnLaunch: false}
+        instance(x: 103.5, y: 446.8, stableId: "g3lkz5tcjhyv89841k9tsbhq") split_e01af3 root.Std_pvchbs.String.Split {}
+        instance(x: 27.2, y: 574.8, stableId: "m11w6wrr142y43ex5hncsxi9") firstnonnull_6fc690 root.Std_pvchbs.List.FirstNonNull {}
+        instance(x: 1302.3, y: 444.5, stableId: "wpkfz493ll3175x4clwlniex") log_1b43df root.Std_pvchbs.Std.Log {}
+        instance(x: 1363.3, y: 736.7, stableId: "lmzo34b5spllembhgh9qf4ko") ``is id invalid (part 2)_a0277a`` root.``Day 2``.``Part 2 (brute force)``.``Is ID Invalid (part 2)`` {}
+        let expr_5f9bfd = #{"Result is: ${@result}"#}
+        let expr_88f05a = #{","#}
+        let expr_70e181 = #{"IDs in range: ${iter}"#}
+        let expr_fcc30b = #{@rangeStart + @index#}
+        let expr_4ac8d1 = #{@result + @value#}
+        portal(entrance: { stableId: "x1hz6uw6cxbdw019uw7awjuu", x: 2319.9, y: 790.7}, exit: { stableId: "rm5qgav6g455bip8rb99kw2q", x: 1687.2, y: 548.8}) portal_517dd9 {
+            entrance_05ad37 => exit_21c4e9
+        }
+        comment(x: 921.1, y: 110.1, stableId: "m44nub9eo3b5me7yp9fsopqc") "# Print the result"
+        comment(x: 528.2, y: 156.7, stableId: "q71y6e1ega2afqcikcwl1kqj") "# Main loop"
+        comment(x: 1847.5, y: 441.9, stableId: "uwy307avj6hh1fyigsbdzec8") "# For each ID in range"
+        data_c1b118 -> cache_a84b48.input
+        foreach_cc8d0e.done -> log_c78b7f.log
+        foreach_cc8d0e.item -> ``for id in range_65662d``.string
+        foreach_cc8d0e.gotItem -> ``for id in range_65662d``.make
+        cache_9bf0a3.value -> foreach_cc8d0e.items
+        cache_9bf0a3.done -> setter_dc626b.execute
+        cache_2c92e4.value -> tostring_3d95a1.input
+        entrypoint_a09128.started -> cache_a84b48.cache
+        setter_dc626b.continue -> foreach_cc8d0e.start
+        if_432b63.then -> setter_3aaa27.execute
+        ``for id in range_65662d``.result -> for_a2ab19.iterations
+        ``for id in range_65662d``.make_bWA77G -> log_1b43df.log
+        for_a2ab19.done -> foreach_cc8d0e.continue
+        for_a2ab19.onCount -> cache_2c92e4.cache
+        data_8e6448 -> cache_67e33c.input
+        cache_a84b48.done -> cache_9bf0a3.cache
+        cache_a84b48.value -> firstnonnull_6fc690.items
+        cache_67e33c.done -> cache_9bf0a3.cache
+        cache_67e33c.value -> firstnonnull_6fc690.items
+        entrypoint_128822.started -> cache_67e33c.cache
+        split_e01af3.strings -> cache_9bf0a3.input
+        firstnonnull_6fc690.value -> split_e01af3.string
+        log_1b43df.logged -> for_a2ab19.start
+        expr_5f9bfd -> log_c78b7f.input
+        expr_88f05a -> split_e01af3.splitOn
+        0 -> setter_dc626b.new_value
+        tostring_3d95a1.output -> ``is id invalid (part 2)_a0277a``.input
+        cache_2c92e4.done -> ``is id invalid (part 2)_a0277a``.match
+        ``is id invalid (part 2)_a0277a``.``found match`` -> if_432b63.execute
+        ``is id invalid (part 2)_a0277a``.result -> if_432b63.predicate
+        expr_70e181 -> log_1b43df.input
+        ``for id in range_65662d``.result -> expr_70e181.iter
+        expr_fcc30b -> cache_2c92e4.input
+        expr_4ac8d1 -> setter_3aaa27.new_value
+        portal_517dd9.exit_21c4e9 -> for_a2ab19.continue
+        if_432b63.else -> portal_517dd9.entrance_05ad37
+        setter_3aaa27.continue -> portal_517dd9.entrance_05ad37
+    }
+
+}
+
